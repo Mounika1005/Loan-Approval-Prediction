@@ -149,7 +149,7 @@ where ProductID NOT IN
 
 
 -- Query 3-Display the CustomerID, CustomerFirstName, CustomerLastName, CustomerAge of the customers whose age is above average and has created more than 1000 OrderIDs. 
---Your query should also display the average age as ‘AvgAge’ of the customers.
+--Your query should also display the average age as â€˜AvgAgeâ€™ of the customers.
 
 select Customer.CustomerID, Customer.CustomerFirstName, Customer.CustomerLastName, Customer.CustomerAge,(select AVG(CustomerAge) from Customer)as 'AvgAge'
 from  Customer inner join SalesOrder B on Customer.CustomerID = B.CustomerID 
@@ -204,8 +204,8 @@ on SO.CustomerID = C.CustomerID
 
 
 
--- Quer 5- Display the ProductName and ‘Over Avg Profit’ for the products whose total profit from all the transactions is above the average profit. 
--- The profit is given by Quantity * (UnitPrice – Cost). 
+-- Quer 5- Display the ProductName and â€˜Over Avg Profitâ€™ for the products whose total profit from all the transactions is above the average profit. 
+-- The profit is given by Quantity * (UnitPrice â€“ Cost). 
 
 select prod1.productname, sum(so1.quantity * (so1.unitprice - prod1.cost)) "Over_Avg_Profit"
 from product prod1,salesorder so1 ,
